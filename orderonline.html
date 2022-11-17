@@ -1,0 +1,135 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="website.css" />
+    <link href="style.css" rel="stylesheet" type="text/css" media="all" />
+    <title>Sticky Navigation</title>
+  </head>
+  <link rel="stylesheet"
+    href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <body>
+    <nav class="nav">
+      <div class="container">
+	  <h1 class="logo"><a href="/orderonline.html"><img src="logo.jpg" width="200" height="100" alt=""/></a></h1>
+        <ul>
+          <li><a href="index.html" accesskey="1" title="">Home </a></li>
+				<li><a href="aboutus.html" accesskey="2" title="">About US</a></li>
+				<li><a href="upload.html" accesskey="3" title="">Careers </a></li>
+				
+				<li><a href="#" class="current">Oderonline</a></li>
+				<li><a href="contactus.html" accesskey="5" title="">Contact Us</a></li>
+				<li><a href="vip.html" accesskey="6" title="">register vip</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div class="container">
+        <br></br>
+        <h1 class="color4">Oderonline</h1>
+        <p>Strat buying bread you love!</p>
+      </div>
+    </div>
+
+    
+
+	<a href="logout.html" class="signout" > Sign Out </a>
+<div class="wrapper">
+	<div id="welcome" class="container">
+	
+
+	<div id="shopping-cart">
+<div class="txt-heading">Shopping Cart</div>
+<a id="btnEmpty" href="orderonline.html?action=empty">Empty Cart</a>
+
+<table class="tbl-cart" cellpadding="10" cellspacing="1">
+<tbody>
+<tr>
+<th style="text-align:left;">Name</th>
+<th style="text-align:left;">Code</th>
+<th style="text-align:right;" width="5%">Quantity</th>
+<th style="text-align:right;" width="10%">Unit Price</th>
+<th style="text-align:right;" width="10%">Price</th>
+<th style="text-align:center;" width="5%">Remove</th>
+</tr>	
+
+
+
+
+
+
+
+
+<tr></table>
+<td colspan="2" align="right">Total:</td>
+<td align="right"></td>
+<td align="right" colspan="2"><strong></strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>		
+ 
+<div class="no-records">Your Cart is Empty</div>
+
+</div>
+
+<div id="product-grid">
+	<div class="txt-heading">Products</div>
+	
+	
+		<div class="image">
+			
+			<div class="image"><img src=""/>
+			<button class="quick_look" data-id="">Quick Look</button>
+			</div>
+			<form method="post" action="">
+			<div class="product-tile-footer">
+			<div class="product-title"></div>
+			<div class="product-price"></div>
+			<div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
+			<div class="txt-heading2">-------------------------------------------------------------------------------------------------------------------------------</div>
+			</div>
+			
+			</form>
+			
+		</div>
+
+</div>
+</div>	
+
+    <div id="demo-modal"></div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+    $(".quick_look").on("click", function() {
+        var product_id = $(this).data("id");
+        	var options = {
+        			modal: true,
+        			height: 'auto',
+        			width:'70%'
+        		};
+        	$('#demo-modal').load('get-product-info.php?id='+product_id).dialog(options).dialog('open');
+    });
+
+    $(document).ready(function() {
+        	$(".image").hover(function() {
+                $(this).children(".quick_look").show();
+            },function() {
+            	   $(this).children(".quick_look").hide();
+            });
+    });
+    </script>
+
+    <script src="website.js"></script>
+
+    <footer  class="footer2">  
+      The creator of this website is Courtier
+        </footer>
+  </body>
+</html>
